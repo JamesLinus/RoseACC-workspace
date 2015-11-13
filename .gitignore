@@ -13,6 +13,7 @@ config.guess
 config.sub
 compile
 
+src/
 bin/
 include/
 lib/
@@ -21,5 +22,5 @@ build_dir/
 install_dir/
 
 Makefile.in
-
+roseacc-environment.rc
 

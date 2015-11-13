@@ -96,9 +96,9 @@ function usage() {
   echo "   -j: number of parallel jobs used by make [default:\"$(cat /proc/cpuinfo | grep processor | wc -l)\"]"
 }
 
-name=""
-tag=""
-directory=""
+name="roseacc"
+tag="ROSEACC"
+directory="$(pwd)"
 extra_ld_library_path=""
 num_parallel_make_jobs=$(cat /proc/cpuinfo | grep processor | wc -l)
 
@@ -139,7 +139,7 @@ install_software "flex-2.5.39"     "http://sourceforge.net/projects/flex/files" 
 install_software "gmp-5.1.2"       "https://gmplib.org/download/gmp"            "bz2" ""             $directory $num_parallel_make_jobs
 install_software "mpfr-3.1.3"      "http://www.mpfr.org/mpfr-current"           "gz"  "gmp"          $directory $num_parallel_make_jobs
 install_software "mpc-1.0.3"       "ftp://ftp.gnu.org/gnu/mpc"                  "gz"  "gmp:mpfr"     $directory $num_parallel_make_jobs
-install_software "gcc-4.4.7"       "https://ftp.gnu.org/gnu/gcc/gcc-4.8.1"      "gz"  "gmp:mpfr:mpc" $directory $num_parallel_make_jobs
+install_software "gcc-4.4.7"       "https://ftp.gnu.org/gnu/gcc/gcc-4.4.7"      "gz"  "gmp:mpfr:mpc" $directory $num_parallel_make_jobs
 
 install_boost "1.45.0" $directory $num_parallel_make_jobs
 
